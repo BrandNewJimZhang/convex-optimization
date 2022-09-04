@@ -78,6 +78,7 @@
 <li class="chapter" data-level="2.1" data-path="凸集.html"><a href="凸集.html#仿射集和凸集"><i class="fa fa-check"></i><b>2.1</b> 仿射集和凸集</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="凸集.html"><a href="凸集.html#直线和线段"><i class="fa fa-check"></i><b>2.1.1</b> 直线和线段</a></li>
+<li class="chapter" data-level="2.1.2" data-path="凸集.html"><a href="凸集.html#仿射集"><i class="fa fa-check"></i><b>2.1.2</b> 仿射集</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -111,7 +112,31 @@
 <p><span class="math display">\[
 y=\theta x_1+(1-\theta)x_2
 \]</span></p>
-<p>其中 <span class="math inline">\(\theta\in\mathbb{R}\)</span>，构成了 <span class="math inline">\(x_1\)</span> 和 <span class="math inline">\(x_2\)</span> 之间的一条<em>直线</em>。假如 <span class="math inline">\(\theta=0\)</span>，那么 <span class="math inline">\(y=x_1\)</span>；如果 <span class="math inline">\(\theta=1\)</span>，就有<span class="math inline">\(y=x_2\)</span>。</p>
+<p>其中 <span class="math inline">\(\theta\in\mathbb{R}\)</span>，构成了 <span class="math inline">\(x_1\)</span> 和 <span class="math inline">\(x_2\)</span> 之间的一条<em>直线</em>。假如 <span class="math inline">\(\theta=0\)</span>，那么 <span class="math inline">\(y=x_2\)</span>；如果 <span class="math inline">\(\theta=1\)</span>，就有 <span class="math inline">\(y=x_1\)</span>。</p>
+<p>如果用另外一种方法表示 <span class="math inline">\(y\)</span></p>
+<p><span class="math display">\[
+y=x_2+\theta(x_1-x_2)
+\]</span></p>
+<p>则有另外一种理解方式：<span class="math inline">\(y\)</span> 是<em>基点</em> <span class="math inline">\(x_2\)</span> 和<em>方向向量</em> <span class="math inline">\(x_1-x_2\)</span>（从 <span class="math inline">\(x_2\)</span> 指向 <span class="math inline">\(x_1\)</span>）的 <span class="math inline">\(\theta\)</span> 倍的加和。因此，<span class="math inline">\(\theta\)</span> 反映了 <span class="math inline">\(y\)</span> 在 <span class="math inline">\(x_1\)</span> 和 <span class="math inline">\(x_2\)</span> 之间的位置。随着 <span class="math inline">\(\theta\)</span> 从 <span class="math inline">\(0\)</span> 到 <span class="math inline">\(1\)</span> 变化，<span class="math inline">\(y\)</span> 从 <span class="math inline">\(x_2\)</span> 逐渐向 <span class="math inline">\(x_1\)</span> 移动；对于 <span class="math inline">\(\theta &gt; 1\)</span> 的情况，<span class="math inline">\(y\)</span> 会在 <span class="math inline">\(x_1\)</span> 外边的射线上。（如图）</p>
+</div>
+<div id="仿射集" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> 仿射集<a href="凸集.html#仿射集" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>如果通过集合 <span class="math inline">\(C\)</span> 中任意两点的直线都在 <span class="math inline">\(C\)</span> 中，那么集合 <span class="math inline">\(C\)</span> 就是<em>仿射集</em>，也就是说，对于任意 <span class="math inline">\(x_1,x_2\in C\)</span> 和 <span class="math inline">\(\theta\in\mathbb{R}\)</span>，都有 <span class="math inline">\(y=\theta x_1+(1-\theta)x_2\in C\)</span>。换句话说，<span class="math inline">\(C\)</span> 包含了 <span class="math inline">\(C\)</span> 中任意两点的线性组合，且线性系数之和为 <span class="math inline">\(1\)</span>。</p>
+<p>这种想法可以推广到多个点上。比如我们有一个点，满足 <span class="math inline">\(\theta_1 x_1+\theta_2 x_2+\cdots+\theta_k x_k\)</span>，其中 <span class="math inline">\(\theta_1+\theta_2+\cdots+\theta_k=1\)</span>。这个点就是 <span class="math inline">\(x_1,\cdots,x_k\)</span> 的仿射组合。从仿射集的定义归纳下来的话（即仿射集包括其中任意两点的仿射组合），一个仿射集包含每个其中点的仿射组合：如果 <span class="math inline">\(C\)</span> 是一个仿射集，那么对于任意 <span class="math inline">\(x_1,\cdots,x_k\in C\)</span>，都有 <span class="math inline">\(\theta_1 x_1+\theta_2 x_2+\cdots+\theta_k x_k\in C\)</span>，其中 <span class="math inline">\(\theta_1+\theta_2+\cdots+\theta_k=1\)</span>。</p>
+<p>如果 <span class="math inline">\(C\)</span> 是一个仿射集，且 <span class="math inline">\(x_0\in C\)</span>，则集合</p>
+<p><span class="math display">\[
+V=C-x_0={x-x_0\mid x\in C}
+\]</span></p>
+<p>是一个子空间（即加法和数乘封闭）。为了证明这一点，假设 <span class="math inline">\(v_1,v_2\in V\)</span>，<span class="math inline">\(\alpha,\beta\in\mathbb{R}\)</span>。那么我们有 <span class="math inline">\(v_1+x_0\in C\)</span>，<span class="math inline">\(v_2+x_0\in C\)</span>，因此</p>
+<p><span class="math display">\[
+\alpha v_1+\beta v_2+x_0=\alpha v_1+\beta v_2+(1-\alpha-\beta)x_0=\alpha(v_1+x_0)+\beta(v_2+x_0)+(1-\alpha-\beta)x_0\in C
+\]</span></p>
+<p>因为 <span class="math inline">\(C\)</span> 是仿射集，并且 <span class="math inline">\(\alpha+\beta+(1-\alpha-\beta)=1\)</span>。因此，我们得到了 <span class="math inline">\(\alpha v_1+\beta v_2\in V\)</span>，因为 <span class="math inline">\(\alpha v_1+\beta v_2+x_0\in C\)</span>。</p>
+<p>因此，仿射集 <span class="math inline">\(C\)</span> 可以表达成</p>
+<p><span class="math display">\[
+C=V+x_0={v+x_0\mid v\in V}
+\]</span></p>
+<p>即一个子空间加上一个偏差量的形式。</p>
 
 
 </div>
