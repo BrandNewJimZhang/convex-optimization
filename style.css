@@ -38,3 +38,7 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+.mjx-chtml {
+  overflow-x: auto;
+}
