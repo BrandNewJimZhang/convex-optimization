@@ -1,3 +1,4 @@
+exm:solution-set-of-linear-equations
 前言
 凸集
 仿射集和凸集

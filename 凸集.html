@@ -23,7 +23,7 @@
 <meta name="author" content="Jim Zhang" />
 
 
-<meta name="date" content="2022-09-04" />
+<meta name="date" content="2022-09-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,7 +136,18 @@ V=C-x_0=\{x-x_0\mid x\in C\}
 <p><span class="math display">\[
 C=V+x_0=\{v+x_0\mid v\in V\}
 \]</span></p>
-<p>即一个子空间加上一个偏差量的形式。</p>
+<p>即一个子空间加上一个偏差量的形式。子空间 <span class="math inline">\(V\)</span> 以不取决于 <span class="math inline">\(x_0\)</span> 取值的情况与仿射集 <span class="math inline">\(C\)</span> 产生关联，因此 <span class="math inline">\(x_0\)</span> 可以选取为 <span class="math inline">\(C\)</span> 中的任意点。因此，我们可以定义仿射集 <span class="math inline">\(C\)</span> 的<em>维度</em>为子空间 <span class="math inline">\(V=C-x_0\)</span> 的维度，其中 <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(C\)</span> 中的任意元素。</p>
+<div class="example">
+<p><span id="exm:solution-set-of-linear-equations" class="example"><strong>Example 2.1  (线性方程组的解集) </strong></span>线性方程组的解集 <span class="math inline">\(C={x\mid Ax=b}\)</span>（其中 <span class="math inline">\(A \in \mathbb{R}^{m\times n}\)</span>，<span class="math inline">\(b \in \mathbb{R}^m\)</span>）是一个仿射集，为了证明，假设 <span class="math inline">\(x_1,x_2\in C\)</span>，那么 <span class="math inline">\(Ax_1=b\)</span>，<span class="math inline">\(Ax_2=b\)</span>。对于任意 <span class="math inline">\(\theta\)</span>，我们有</p>
+<p><span class="math display">\[
+\begin{align}
+A(\theta x_1+(1-\theta)x_2)&amp;=\theta Ax_1+(1-\theta)Ax_2 \\
+&amp;=\theta b+(1-\theta)b \\
+&amp;=b
+\end{align}
+\]</span></p>
+<p>这表明了仿射组合 <span class="math inline">\(\theta x_1+(1-\theta)x_2\)</span> 也是 <span class="math inline">\(C\)</span> 的一个元素。因此，<span class="math inline">\(C\)</span> 是仿射集。</p>
+</div>
 
 
 </div>
