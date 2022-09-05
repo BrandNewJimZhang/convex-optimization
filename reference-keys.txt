@@ -1,6 +1,9 @@
 exm:solution-set-of-linear-equations
+exm:relative-interior
 前言
 凸集
 仿射集和凸集
 直线和线段
 仿射集
+仿射维数和相对内部
+凸集-1
