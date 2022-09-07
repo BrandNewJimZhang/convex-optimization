@@ -23,7 +23,7 @@
 <meta name="author" content="Jim Zhang" />
 
 
-<meta name="date" content="2022-09-05" />
+<meta name="date" content="2022-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,7 +182,13 @@ C=\{x\in\mathbb{R}^3\mid -1\leq x_1\leq 1,-1\leq x_2\leq 1, x_3=0\}
 </div>
 <div id="凸集-1" class="section level3 hasAnchor" number="2.1.4">
 <h3><span class="header-section-number">2.1.4</span> 凸集<a href="凸集.html#凸集-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>如果一个集合 <span class="math inline">\(C\)</span> 中</p>
+<p>如果连接一个集合 <span class="math inline">\(C\)</span> 中任意两点的线段仍在 <span class="math inline">\(C\)</span> 中，那么我们称 <span class="math inline">\(C\)</span> 是<em>凸集</em>，也就是说，对于任意的 <span class="math inline">\(x_1, x_2\in C\)</span> 以及任意 <span class="math inline">\(0\leq\theta\leq 1\)</span>，都有</p>
+<p><span class="math display">\[
+\theta x_1+(1-\theta)x_2\in C
+\]</span></p>
+<p>通俗地说，如果一个集合中任意一点都能被另外任意一点“看见”（光沿直线传播？），这个集合就是凸集。所有仿射集都是凸集，因为仿射集一定包含了连接其中任意两点的线段。如图。</p>
+<p>我们将 <span class="math inline">\(\theta_1x_1+\cdots+\theta_kx_k, \sum_{i=1}^k\theta_i=1, \theta_i\geq 0\)</span> 称为 <span class="math inline">\(C\)</span> 的<em>凸组合</em>。和仿射集一样，一个集合为凸集<strong>当且仅当</strong>其所有凸组合都在集合中。凸组合其实可以被看作为几个点的<em>混合</em>或<em>加权平均</em>。</p>
+<p>一个集合 <span class="math inline">\(C\)</span> 的<em>凸包</em>（记作 <span class="math inline">\(\operatorname{conv}C\)</span>）是集合 <span class="math inline">\(C\)</span> 的</p>
 
 
 </div>
