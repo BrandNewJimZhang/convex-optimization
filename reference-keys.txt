@@ -7,3 +7,5 @@ exm:relative-interior
 仿射集
 仿射维数和相对内部
 凸集-1
+锥
+一些重要的例子
