@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 凸集 | 凸优化</title>
   <meta name="description" content="test" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 凸集 | 凸优化" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Jim Zhang" />
 
 
-<meta name="date" content="2022-09-12" />
+<meta name="date" content="2022-09-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -83,7 +83,10 @@
 <li class="chapter" data-level="2.1.4" data-path="凸集.html"><a href="凸集.html#凸集-1"><i class="fa fa-check"></i><b>2.1.4</b> 凸集</a></li>
 <li class="chapter" data-level="2.1.5" data-path="凸集.html"><a href="凸集.html#锥"><i class="fa fa-check"></i><b>2.1.5</b> 锥</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="凸集.html"><a href="凸集.html#一些重要的例子"><i class="fa fa-check"></i><b>2.2</b> 一些重要的例子</a></li>
+<li class="chapter" data-level="2.2" data-path="凸集.html"><a href="凸集.html#一些重要的例子"><i class="fa fa-check"></i><b>2.2</b> 一些重要的例子</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="凸集.html"><a href="凸集.html#超平面和半空间"><i class="fa fa-check"></i><b>2.2.1</b> 超平面和半空间</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -230,10 +233,20 @@ C=\{x\in\mathbb{R}^3\mid -1\leq x_1\leq 1,-1\leq x_2\leq 1, x_3=0\}
 <ul>
 <li>空集 <span class="math inline">\(\emptyset\)</span>、任意一个孤立的点 <span class="math inline">\(\{x_0\}\)</span>、整个 <span class="math inline">\(\mathbb{R}^n\)</span> 空间都是 <span class="math inline">\(\mathbb{R}^n\)</span> 的仿射（都仿射了，肯定是凸的）子集。</li>
 <li>任意一条直线一定是仿射的。如果它穿过零点，它就是一个子空间，也是一个凸锥。</li>
-<li>一条<em>射线</em>，拥有 <span class="math inline">\(\{x_0+\theta v\mid\theta\geq 0\}\)</span> 的形式</li>
+<li>一条线段一定是凸的，但是除非它缩小到一个点，否则它不仿射。</li>
+<li>一条<em>射线</em>，拥有 <span class="math inline">\(\{x_0+\theta v\mid\theta\geq 0, v\neq 0\}\)</span> 的形式，是凸的，但是不仿射。如果它穿过零点，它就是一个凸锥。</li>
+<li>所有子空间既仿射又是凸锥。</li>
 </ul>
+<div id="超平面和半空间" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> 超平面和半空间<a href="凸集.html#超平面和半空间" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>一个超平面具有如下形式：</p>
+<p><span class="math display">\[
+\{x\in\mathbb{R}^n\mid a^Tx=b\}
+\]</span></p>
+<p>其中 <span class="math inline">\(a\in\mathbb{R}, a\neq 0, b\in\mathbb{R}\)</span>。从代数来讲，这是非奇异线性方程组 <span class="math inline">\(a^Tx=b\)</span> 的解集，因此是一个仿射集。</p>
 
 
+</div>
 </div>
 </div>
             </section>
@@ -302,7 +315,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
