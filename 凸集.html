@@ -246,11 +246,11 @@ C=\{x\in\mathbb{R}^3\mid -1\leq x_1\leq 1,-1\leq x_2\leq 1, x_3=0\}
 \]</span></p>
 <p>其中 <span class="math inline">\(a\in\mathbb{R}, a\neq 0, b\in\mathbb{R}\)</span>。从代数上来讲，这是非奇异线性方程组 <span class="math inline">\(a^Tx=b\)</span> 的解集，因此是一个仿射集。从几何上来讲，超平面 <span class="math inline">\(\{x\mid a^Tx=b\}\)</span> 可以表达成一个常量和给定向量 <span class="math inline">\(a\)</span> 的内积组成的点集；常量 <span class="math inline">\(b\in\mathbb{R}\)</span> 表示了和原超平面的偏差。这种几何表达法可以通过这种形式方便理解：</p>
 <p><span class="math display">\[
-\{x\mid a^T(x-x_0)=0}
+\{x\mid a^T(x-x_0)=0\}
 \]</span></p>
 <p>其中 <span class="math inline">\(x_0\)</span> 是超平面上任意一个点（即任意一个满足 <span class="math inline">\(a^Tx_0=b\)</span> 的点）。这种形式可以写成：</p>
 <p><span class="math display">\[
-\{x\mid a^T(x-x_0)=0}=x_0+a^\perp
+\{x\mid a^T(x-x_0)=0\}=x_0+a^\perp
 \]</span></p>
 <p>其中 <span class="math inline">\(a^\perp\)</span> 是 <span class="math inline">\(a\)</span> 的正交补（即其中所有的向量都与 <span class="math inline">\(a\)</span> 正交）：</p>
 <p><span class="math display">\[
@@ -275,7 +275,22 @@ a^\perp=\{v\mid a^Tv=0\}
 <p><span class="math display">\[
 B(x_c, r)=\{x\mid \Vert x-x_c\Vert_2\leq r\}=\{x\mid(x-x_c)^T(x-x_c)\leq r^2\},
 \]</span></p>
-<p>其中 <span class="math inline">\(r&gt;0\)</span>，<span class="math inline">\(\Vert\cdot\Vert_2\)</span> 代表 Euclidean 范数，即 <span class="math inline">\(\Vert x\Vert_2=\sqrt{x^Tx}\)</span>。</p>
+<p>其中 <span class="math inline">\(r&gt;0\)</span>，<span class="math inline">\(\Vert\cdot\Vert_2\)</span> 代表 Euclidean 范数，即 <span class="math inline">\(\Vert x\Vert_2=(x^Tx)^{1/2}\)</span>。向量 <span class="math inline">\(x_c\)</span> 代表球心，标量 <span class="math inline">\(r\)</span> 是其半径；<span class="math inline">\(B(x_c, r)\)</span> 包含了所有距离球心 <span class="math inline">\(x_c\)</span> 不超过 <span class="math inline">\(r\)</span> 的点。Euclidean 的另外一种常用表达形式是：</p>
+<p><span class="math display">\[
+B(x_c, r)=\{x_c+ru\mid \Vert u\Vert_2\leq 1\}
+\]</span></p>
+<p>Euclidean 球是一个凸集：</p>
+<p>如果 <span class="math inline">\(\Vert x_1-x_c\Vert_2\leq r\)</span>，<span class="math inline">\(\Vert x_2-x_c\Vert_2\leq r\)</span> 以及 <span class="math inline">\(0\leq\theta\leq 1\)</span>，则有：</p>
+<p><span class="math display">\[
+\begin{align}
+\Vert\theta x_1+(1-\theta)x_2-x_c\Vert_2&amp;=\Vert\theta(x_1-x_c)+(1-\theta)(x_2-x_c)\Vert_2\\
+&amp;\leq\theta\Vert x_1-x_c\Vert_2+(1-\theta)\Vert x_2-x_c\Vert_2\\
+&amp;\leq r.
+\end{align}
+\]</span></p>
+<p>（这里我们用到了 <span class="math inline">\(\Vert\cdot\Vert_2\)</span> 的齐次性和三角不等式）</p>
+<p>还有一种类似的凸集是<em>椭球</em>，它是一种满足如下形式的集合：</p>
+<p>$$</p>
 
 
 </div>
