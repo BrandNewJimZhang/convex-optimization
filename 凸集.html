@@ -86,6 +86,7 @@
 <li class="chapter" data-level="2.2" data-path="凸集.html"><a href="凸集.html#一些重要的例子"><i class="fa fa-check"></i><b>2.2</b> 一些重要的例子</a>
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="凸集.html"><a href="凸集.html#超平面和半空间"><i class="fa fa-check"></i><b>2.2.1</b> 超平面和半空间</a></li>
+<li class="chapter" data-level="2.2.2" data-path="凸集.html"><a href="凸集.html#euclidean-球和椭球"><i class="fa fa-check"></i><b>2.2.2</b> Euclidean 球和椭球</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -129,7 +130,7 @@ y=x_2+\theta(x_1-x_2)
 <div id="仿射集" class="section level3 hasAnchor" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> 仿射集<a href="凸集.html#仿射集" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>如果通过集合 <span class="math inline">\(C\)</span> 中任意两点的直线都在 <span class="math inline">\(C\)</span> 中，那么集合 <span class="math inline">\(C\)</span> 就是<em>仿射集</em>，也就是说，对于任意 <span class="math inline">\(x_1,x_2\in C\)</span> 和 <span class="math inline">\(\theta\in\mathbb{R}\)</span>，都有 <span class="math inline">\(y=\theta x_1+(1-\theta)x_2\in C\)</span>。换句话说，<span class="math inline">\(C\)</span> 包含了 <span class="math inline">\(C\)</span> 中任意两点的线性组合，且线性系数之和为 <span class="math inline">\(1\)</span>。</p>
-<p>这种想法可以推广到多个点上。比如我们有一个点，满足 <span class="math inline">\(\theta_1 x_1+\theta_2 x_2+\cdots+\theta_k x_k\)</span>，其中 <span class="math inline">\(\theta_1+\theta_2+\cdots+\theta_k=1\)</span>。这个点就是 <span class="math inline">\(x_1,\cdots,x_k\)</span> 的仿射组合。从仿射集的定义归纳下来的话（即仿射集包括其中任意两点的仿射组合），一个仿射集包含每个其中点的仿射组合：如果 <span class="math inline">\(C\)</span> 是一个仿射集，那么对于任意 <span class="math inline">\(x_1,\cdots,x_k\in C\)</span>，都有 <span class="math inline">\(\theta_1 x_1+\theta_2 x_2+\cdots+\theta_k x_k\in C\)</span>，其中 <span class="math inline">\(\theta_1+\theta_2+\cdots+\theta_k=1\)</span>。</p>
+<p>这种想法可以推广到多个点上。比如我们有一个点，满足 <span class="math inline">\(\sum_{i=1}^k \theta_ix_i\)</span>，其中 <span class="math inline">\(\sum_{i=1}^k \theta_i=1\)</span>。这个点就是 <span class="math inline">\(x_1,\cdots,x_k\)</span> 的仿射组合。从仿射集的定义归纳下来的话（即仿射集包括其中任意两点的仿射组合），一个仿射集包含每个其中点的仿射组合：如果 <span class="math inline">\(C\)</span> 是一个仿射集，那么对于任意 <span class="math inline">\(x_1,\cdots,x_k\in C\)</span>，都有 <span class="math inline">\(\sum_{i=1}^k \theta_ix_i\in C\)</span>，其中 <span class="math inline">\(\sum_{i=1}^k \theta_i=1\)</span>。</p>
 <p>如果 <span class="math inline">\(C\)</span> 是一个仿射集，且 <span class="math inline">\(x_0\in C\)</span>，则集合</p>
 <p><span class="math display">\[
 V=C-x_0=\{x-x_0\mid x\in C\}
@@ -158,7 +159,7 @@ A(\theta x_1+(1-\theta)x_2)&amp;=\theta Ax_1+(1-\theta)Ax_2 \\
 </div>
 <p>包括一个 <span class="math inline">\(C \subseteq \mathbb{R}\)</span> 的所有点的仿射组合的集合称为 <span class="math inline">\(C\)</span> 的<em>仿射包</em>，记作 <span class="math inline">\(\operatorname{aff}C\)</span>：</p>
 <p><span class="math display">\[
-\operatorname{aff}C=\{\theta_1x_1+\cdots+\theta_kx_k\mid x_1,\ldots,x_k\in C,\sum_{i=1}^k\theta_i=1\}
+\operatorname{aff}C=\{\sum_{i=1}^k \theta_ix_i\mid x_1,\ldots,x_k\in C,\sum_{i=1}^k\theta_i=1\}
 \]</span></p>
 <p><span class="math inline">\(C\)</span> 的仿射包是包含 <span class="math inline">\(C\)</span> 的最小仿射集。如果 <span class="math inline">\(S\)</span> 是一个仿射集，且 <span class="math inline">\(C\subseteq S\)</span>，那么 <span class="math inline">\(\operatorname{aff}C\subseteq S\)</span>。</p>
 </div>
@@ -192,10 +193,10 @@ C=\{x\in\mathbb{R}^3\mid -1\leq x_1\leq 1,-1\leq x_2\leq 1, x_3=0\}
 \theta x_1+(1-\theta)x_2\in C
 \]</span></p>
 <p>通俗地说，如果一个集合中任意一点都能被另外任意一点“看见”（光沿直线传播？），这个集合就是凸集。所有仿射集都是凸集，因为仿射集一定包含了连接其中任意两点的线段。如图。</p>
-<p>我们将 <span class="math inline">\(\theta_1x_1+\cdots+\theta_kx_k, \sum_{i=1}^k\theta_i=1, \theta_i\geq 0\)</span> 称为 <span class="math inline">\(C\)</span> 的<em>凸组合</em>。和仿射集一样，一个集合为凸集<strong>当且仅当</strong>其所有凸组合都在集合中。凸组合其实可以被看作为几个点的<em>混合</em>或<em>加权平均</em>。</p>
+<p>我们将 <span class="math inline">\(\sum_{i=1}^k \theta_ix_i, \sum_{i=1}^k\theta_i=1, \theta_i\geq 0\)</span> 称为 <span class="math inline">\(C\)</span> 的<em>凸组合</em>。和仿射集一样，一个集合为凸集<strong>当且仅当</strong>其所有凸组合都在集合中。凸组合其实可以被看作为几个点的<em>混合</em>或<em>加权平均</em>。</p>
 <p>一个集合 <span class="math inline">\(C\)</span> 的<em>凸包</em>（记作 <span class="math inline">\(\operatorname{conv}C\)</span>）是集合 <span class="math inline">\(C\)</span> 的所有点的凸组合组成的集合：</p>
 <p><span class="math display">\[
-\operatorname{conv}C=\{\theta_1x_1+\cdots+\theta_kx_k\mid \sum_{i=1}^k\theta_i=1, \theta_i\geq 0, x_i\in C\}
+\operatorname{conv}C=\{\sum_{i=1}^k \theta_ix_i\mid \sum_{i=1}^k\theta_i=1, \theta_i\geq 0, x_i\in C\}
 \]</span></p>
 <p>顾名思义，凸包永远是凸的。它是包含集合 <span class="math inline">\(C\)</span> 的最小凸集。如果集合 <span class="math inline">\(B\)</span> 是包含集合 <span class="math inline">\(C\)</span> 的凸集，那么 <span class="math inline">\(\operatorname{conv}C\subseteq B\)</span>。如图。</p>
 <p>凸组合的概念可以推广到级数、积分或者概率分布等等。假设 <span class="math inline">\(\theta_1, \theta_2\)</span> 满足：</p>
@@ -243,7 +244,38 @@ C=\{x\in\mathbb{R}^3\mid -1\leq x_1\leq 1,-1\leq x_2\leq 1, x_3=0\}
 <p><span class="math display">\[
 \{x\in\mathbb{R}^n\mid a^Tx=b\}
 \]</span></p>
-<p>其中 <span class="math inline">\(a\in\mathbb{R}, a\neq 0, b\in\mathbb{R}\)</span>。从代数来讲，这是非奇异线性方程组 <span class="math inline">\(a^Tx=b\)</span> 的解集，因此是一个仿射集。</p>
+<p>其中 <span class="math inline">\(a\in\mathbb{R}, a\neq 0, b\in\mathbb{R}\)</span>。从代数上来讲，这是非奇异线性方程组 <span class="math inline">\(a^Tx=b\)</span> 的解集，因此是一个仿射集。从几何上来讲，超平面 <span class="math inline">\(\{x\mid a^Tx=b\}\)</span> 可以表达成一个常量和给定向量 <span class="math inline">\(a\)</span> 的内积组成的点集；常量 <span class="math inline">\(b\in\mathbb{R}\)</span> 表示了和原超平面的偏差。这种几何表达法可以通过这种形式方便理解：</p>
+<p><span class="math display">\[
+\{x\mid a^T(x-x_0)=0}
+\]</span></p>
+<p>其中 <span class="math inline">\(x_0\)</span> 是超平面上任意一个点（即任意一个满足 <span class="math inline">\(a^Tx_0=b\)</span> 的点）。这种形式可以写成：</p>
+<p><span class="math display">\[
+\{x\mid a^T(x-x_0)=0}=x_0+a^\perp
+\]</span></p>
+<p>其中 <span class="math inline">\(a^\perp\)</span> 是 <span class="math inline">\(a\)</span> 的正交补（即其中所有的向量都与 <span class="math inline">\(a\)</span> 正交）：</p>
+<p><span class="math display">\[
+a^\perp=\{v\mid a^Tv=0\}
+\]</span></p>
+<p>这种几何的表达形式（如图所示）：</p>
+<p>超平面将 <span class="math inline">\(\mathbb{R}^n\)</span> 空间分成两个半空间。一个（闭）半空间是一种满足如下形式的集合：</p>
+<p><span class="math display">\[
+\{x\mid a^Tx\leq b\}
+\]</span></p>
+<p>其中 <span class="math inline">\(a\neq 0\)</span>，即非奇异线性不等式组的解集。半空间是凸的，但是不仿射。（如图）</p>
+<p>半空间同样可以表达成这样的形式：</p>
+<p><span class="math display">\[
+\{x\mid a^T(x-x_0)\leq 0\}
+\]</span></p>
+<p>其中 <span class="math inline">\(x_0\)</span> 是相关超平面上任意一个点（即任意一个满足 <span class="math inline">\(a^Tx_0=b\)</span> 的点）。（？）</p>
+<p>半空间（哪个？）的边界为超平面 <span class="math inline">\(\{x\mid a^Tx=b\}\)</span>。半空间 <span class="math inline">\(\{x\mid a^Tx\leq b\}\)</span> 的内部 <span class="math inline">\(\{x\mid a^Tx&lt; b\}\)</span> 被称作<em>开半空间</em>。</p>
+</div>
+<div id="euclidean-球和椭球" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Euclidean 球和椭球<a href="凸集.html#euclidean-球和椭球" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>在 <span class="math inline">\(\mathbb{R}^n\)</span> 空间中 Euclidean 球（或者简而言之地称作球）是一种满足如下形式的集合：</p>
+<p><span class="math display">\[
+B(x_c, r)=\{x\mid \Vert x-x_c\Vert_2\leq r\}=\{x\mid(x-x_c)^T(x-x_c)\leq r^2\},
+\]</span></p>
+<p>其中 <span class="math inline">\(r&gt;0\)</span>，<span class="math inline">\(\Vert\cdot\Vert_2\)</span> 代表 Euclidean 范数，即 <span class="math inline">\(\Vert x\Vert_2=\sqrt{x^Tx}\)</span>。</p>
 
 
 </div>
